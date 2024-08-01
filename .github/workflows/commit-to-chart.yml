@@ -44,5 +44,5 @@ jobs:
         run: |
           git config --global user.name "bot"
           git config --global user.email "${{ secrets.BOT_EMAIL }}"
-          git config -m "updating version from ref: ${{ git_hash }}"
+          git config -m "updating version from ref: ${{ github.sha }}"
           git push
