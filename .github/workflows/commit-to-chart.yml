@@ -11,16 +11,17 @@ jobs:
       - ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          path: '/'
+          sparse_checkout: |
+            versions.txt
           ref: 'main'
           persist-credentials: false
       
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          path: '/'
+          sparse-checkout: .
           ref: 'main'
           repository: 'catemlitten/testRepoChart'
           token: ${{ secrets.CHART_DEPLOY_KEY }}
