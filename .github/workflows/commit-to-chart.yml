@@ -17,11 +17,11 @@ jobs:
             versions.txt
           ref: 'main'
           persist-credentials: false
-          
+
       - name: Checkout
         uses: actions/checkout@v4
-          with:
-            sparse-checkout: .
+        with:
+          sparse-checkout: .
           ref: 'main'
           repository: 'catemlitten/testRepoChart'
           token: ${{ secrets.CHART_DEPLOY_KEY }}
