@@ -32,6 +32,8 @@ jobs:
       - name: Copy files to chart repo
         shell: bash
         run: |
+          cp -rvT version.txt version.txt
+        run: |
           git add -A
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
