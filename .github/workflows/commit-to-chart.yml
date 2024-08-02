@@ -16,6 +16,7 @@ jobs:
           sparse-checkout: |
             versions.txt
           ref: 'main'
+          path: 'src'
           fetch-depth: 1
           persist-credentials: false
 
@@ -24,6 +25,7 @@ jobs:
         with:
           sparse-checkout: .
           ref: 'main'
+          path: 'dest'
           repository: 'catemlitten/testRepoChart'
           token: ${{ secrets.CHART_TOKEN }}
           fetch-depth: 1
