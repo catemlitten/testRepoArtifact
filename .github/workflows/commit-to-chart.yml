@@ -3,7 +3,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'versions.txt'
+      - 'versions2.txt'
 
 jobs:
   copy-files:
@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
-            versions.txt
+            versions2.txt
           ref: 'main'
           persist-credentials: false
 
@@ -32,7 +32,7 @@ jobs:
       - name: Copy files to chart repo
         shell: bash
         run: |
-          cp -rvT versions.txt chartVersions.txt
+          cp -rvT versions2.txt chartVersions.txt
       - name: Check for new files
         shell: bash
         run: |
