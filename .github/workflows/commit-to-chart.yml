@@ -39,7 +39,7 @@ jobs:
             echo "hasNewFiles=false" >> $GITHUB_STATE
           fi
       - name: Push new files
-        if: $hasNewFiles == 'true'
+        if: $"hasNewFiles" == 'true'
         shell: bash
         working-directory: '/'
         run: |
