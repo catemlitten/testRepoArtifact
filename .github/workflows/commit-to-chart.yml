@@ -45,6 +45,7 @@ jobs:
       - name: Check for new files
         shell: bash
         run: |
+          pwd
           git add -A
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
