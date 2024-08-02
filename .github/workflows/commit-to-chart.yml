@@ -24,6 +24,7 @@ jobs:
           sparse-checkout: |
             versions.txt
           ref: 'main'
+          path: 'dest'
           repository: 'catemlitten/testRepoChart'
           token: ${{ secrets.CHART_TOKEN }}
           fetch-depth: 0
@@ -32,7 +33,7 @@ jobs:
       - name: Copy files to chart repo
         shell: bash
         run: |
-          cp -rvT versions.txt versions.txt
+          cp -rvT versions.txt dest/versions.txt
       - name: Check for new files
         shell: bash
         run: |
