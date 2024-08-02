@@ -34,12 +34,12 @@ jobs:
           git add -A
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
-            echo "::set-output name=hasNewFiles::true"
+            echo "hasNewFiles=true" >> $GITHUB_STATE
           else
-            echo "::set-output name=hasNewFiles::false"
+            echo "hasNewFiles=false" >> $GITHUB_STATE
           fi
       - name: Push new files
-        if: ${{ steps.newFiles.outputs.hasNewFiles == 'true' }}
+        if: $hasNewFiles == 'true'
         shell: bash
         working-directory: '/'
         run: |
