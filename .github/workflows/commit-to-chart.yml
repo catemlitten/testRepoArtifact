@@ -20,17 +20,18 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
 
+      - name: Install SSH Client
+        uses: webfactory/ssh-agent@0.90
+        with:
+          ssh-private-key: ${{ secrets.CHART_DEPLOY_KEY }}
+        
       - name: Checkout
         uses: actions/checkout@v4
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${{ secrets.CHART_DEPLOY_KEY }}"
         with:
           sparse-checkout: .
           ref: 'main'
           path: 'dest'
+          ssh-key: ${{ secrets.CHART_DEPLOY_KEY }}
           repository: 'catemlitten/testRepoChart'
           fetch-depth: 1
           persist-credentials: true
