@@ -24,7 +24,7 @@ jobs:
           sparse-checkout: .
           ref: 'main'
           repository: 'catemlitten/testRepoChart'
-          token: ${{ secrets.CHART_DEPLOY_KEY }}
+          token: ${{ secrets.CHART_TOKEN }}
           fetch-depth: 0
           persist-credentials: true
 
