@@ -33,6 +33,8 @@ jobs:
         shell: bash
         run: |
           cp -rvT version.txt version.txt
+      - name: Check for new files
+        shell: bash
         run: |
           git add -A
           git status --porcelain | wc -l
