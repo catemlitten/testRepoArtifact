@@ -25,7 +25,7 @@ jobs:
             versions.txt
           ref: 'main'
           repository: 'catemlitten/testRepoChart'
-          token: ${{ secrets.CHART_TOKEN }}
+          token: ${{ secrets.CHART_DEPLOY_KEY }}
           fetch-depth: 0
           persist-credentials: true
 
