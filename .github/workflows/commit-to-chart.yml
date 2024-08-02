@@ -21,7 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          sparse-checkout: .
+          sparse-checkout: |
+            versions.txt
           ref: 'main'
           repository: 'catemlitten/testRepoChart'
           token: ${{ secrets.CHART_TOKEN }}
