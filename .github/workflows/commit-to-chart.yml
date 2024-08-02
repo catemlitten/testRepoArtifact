@@ -30,7 +30,7 @@ jobs:
         with:
           sparse-checkout: .
           ref: 'main'
-          path: 'dest'
+          path: 'versions'
           ssh-key: ${{ secrets.CHART_DEPLOY_NO_PHRASE }}
           repository: 'catemlitten/testRepoChart'
           fetch-depth: 1
@@ -40,9 +40,11 @@ jobs:
         shell: bash
         run: |
           ls
-          cp -rvT src/versions.txt dest/chartVersions.txt
+          mkdir -p versions
+          cp -rvT src/versions.txt versions/chartVersions.txt
 
       - name: Check for new files
+        working-directory: versions
         shell: bash
         run: |
           pwd
