@@ -38,6 +38,7 @@ jobs:
           else
             echo "HAS_CHANGES=false" >> $GITHUB_ENV
           fi
+          echo "The value of HAS_CHANGES is $HAS_CHANGES"
       - name: Push new files
         if: env.HAS_CHANGES == 'true'
         shell: bash
