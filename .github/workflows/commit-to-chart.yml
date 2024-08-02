@@ -58,6 +58,7 @@ jobs:
           echo "The value of HAS_CHANGES is $HAS_CHANGES"
 
       - name: Push new files
+        working-directory: versions
         if: env.HAS_CHANGES == 'true'
         shell: bash
         run: |
