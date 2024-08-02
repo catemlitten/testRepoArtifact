@@ -16,7 +16,7 @@ jobs:
           sparse-checkout: |
             versions.txt
           ref: 'main'
-          fetch-depth: 0
+          fetch-depth: 1
           persist-credentials: false
 
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
           ref: 'main'
           repository: 'catemlitten/testRepoChart'
           token: ${{ secrets.CHART_TOKEN }}
-          fetch-depth: 0
+          fetch-depth: 1
           persist-credentials: true
 
       - name: Copy files to chart repo
