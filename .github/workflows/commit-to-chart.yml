@@ -39,7 +39,7 @@ jobs:
             echo "HAS_CHANGES=false" >> $GITHUB_ENV
           fi
       - name: Push new files
-        if: $HAS_CHANGES == 'true'
+        if: env.HAS_CHANGES == 'true'
         shell: bash
         working-directory: '/'
         run: |
