@@ -21,7 +21,7 @@ jobs:
           persist-credentials: false
 
       - name: Install SSH Client
-        uses: webfactory/ssh-agent@0.90
+        uses: webfactory/ssh-agent@0.9.0
         with:
           ssh-private-key: ${{ secrets.CHART_DEPLOY_KEY }}
         
