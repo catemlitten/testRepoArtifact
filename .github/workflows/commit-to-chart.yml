@@ -33,6 +33,7 @@ jobs:
         shell: bash
         run: |
           cp -rvT versions.txt chartVersions.txt
+
       - name: Check for new files
         shell: bash
         run: |
@@ -44,10 +45,10 @@ jobs:
             echo "HAS_CHANGES=false" >> $GITHUB_ENV
           fi
           echo "The value of HAS_CHANGES is $HAS_CHANGES"
+
       - name: Push new files
         if: env.HAS_CHANGES == 'true'
         shell: bash
-        working-directory: '/'
         run: |
           git config --global user.name "bot"
           git config --global user.email "${{ secrets.BOT_EMAIL }}"
