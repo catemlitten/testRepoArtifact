@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
-            chartVersions.txt
+            versions.txt
           ref: 'main'
           repository: 'catemlitten/testRepoChart'
           token: ${{ secrets.CHART_TOKEN }}
@@ -33,7 +33,6 @@ jobs:
         shell: bash
         run: |
           cp -rvT versions.txt chartVersions.txt
-
       - name: Check for new files
         shell: bash
         run: |
@@ -45,7 +44,6 @@ jobs:
             echo "HAS_CHANGES=false" >> $GITHUB_ENV
           fi
           echo "The value of HAS_CHANGES is $HAS_CHANGES"
-
       - name: Push new files
         if: env.HAS_CHANGES == 'true'
         shell: bash
