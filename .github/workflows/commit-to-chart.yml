@@ -34,9 +34,9 @@ jobs:
           git add -A
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
-            echo "HAS_CHANGES=true" >> $GITHUB_STATE
+            echo "HAS_CHANGES=true" >> $GITHUB_ENV
           else
-            echo "HAS_CHANGES=false" >> $GITHUB_STATE
+            echo "HAS_CHANGES=false" >> $GITHUB_ENV
           fi
       - name: Push new files
         if: HAS_CHANGES == 'true'
