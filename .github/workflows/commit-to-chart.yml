@@ -32,7 +32,7 @@ jobs:
       - name: Copy files to chart repo
         shell: bash
         run: |
-          cp -vT versions.txt chartVersions.txt
+          cp -vT /versions.txt chartVersions.txt
 
       - name: Check for new files
         shell: bash
