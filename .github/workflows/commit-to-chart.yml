@@ -32,7 +32,7 @@ jobs:
           path: 'versions'
           ssh-key: ${{ secrets.CHART_DEPLOY_NO_PHRASE }}
           repository: 'catemlitten/testRepoChart'
-          fetch-depth: 30
+          fetch-depth: 0
           persist-credentials: true
 
       - name: Copy files to chart repo
