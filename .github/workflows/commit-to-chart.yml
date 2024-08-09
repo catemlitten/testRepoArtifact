@@ -33,12 +33,13 @@ jobs:
           path: 'versions'
           ssh-key: ${{ secrets.CHART_DEPLOY_NO_PHRASE }}
           repository: 'catemlitten/testRepoChart'
-          fetch-depth: 1
+          fetch-depth: 30
           persist-credentials: true
 
       - name: Copy files to chart repo
         shell: bash
         run: |
+          git rev-list head
           ls
           mkdir -p versions
           cp -rvT src/versions.txt versions/chartVersions.txt
