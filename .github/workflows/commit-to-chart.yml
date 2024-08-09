@@ -41,7 +41,8 @@ jobs:
         run: |
           ls
           git checkout HEAD^
-          git rev-list HEAD
+          git rev-list 7b7714abc6aefda2ff537f9fc1e3897f54b933cb..a6dec0671ebd633dcd6c349c4fb84e767ca25adb
+          git switch -
           mkdir -p versions
           cp -rvT ../src/versions.txt versions/chartVersions.txt
 
