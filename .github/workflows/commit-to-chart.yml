@@ -34,14 +34,14 @@ jobs:
           repository: 'catemlitten/testRepoChart'
           fetch-depth: 30
           persist-credentials: true
-        run: git checkout HEAD^
 
       - name: Copy files to chart repo
         shell: bash
         working-directory: versions
         run: |
           ls
-          git rev-list head
+          git checkout HEAD^
+          git rev-list HEAD
           mkdir -p versions
           cp -rvT ../src/versions.txt versions/chartVersions.txt
 
