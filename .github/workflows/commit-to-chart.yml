@@ -38,11 +38,12 @@ jobs:
 
       - name: Copy files to chart repo
         shell: bash
+        working-directory: versions
         run: |
-          git rev-list head
           ls
+          git rev-list head
           mkdir -p versions
-          cp -rvT src/versions.txt versions/chartVersions.txt
+          cp -rvT ../src/versions.txt versions/chartVersions.txt
 
       - name: Check for new files
         working-directory: versions
